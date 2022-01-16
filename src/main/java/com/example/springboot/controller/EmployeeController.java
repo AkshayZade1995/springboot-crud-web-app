@@ -9,15 +9,22 @@ import com.example.springboot.service.EmployeeService;
 
 @Controller
 public class EmployeeController {
-	
+
 	@Autowired
 	private EmployeeService employeeService;
-	
-	//display list 
+
+	// display list
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
 		model.addAttribute("listEmployees", employeeService.getAllEmployees());
 		return "index";
 	}
-	
+
+	// display list
+	@GetMapping("/akshayMethod")
+	public String akshayMethod(Model model) {
+		String result = "Akshay Method";
+		return "result";
+	}
+
 }
